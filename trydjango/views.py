@@ -19,15 +19,16 @@ def home_view(request):
 
     article_obj = Article.objects.get(id=random_id)
     
-    my_list = [102, 334, 13, 92, 47]
-    my_list_str = ""
+    # my_list = [102, 334, 13, 92, 47]
+    # my_list_str = ""
+    article_queryset = Article.objects.all() #.filter(id=1)
 
-    for x in my_list:
-        my_list_str += f"<li>number is {x}</li>"
+    # for x in my_list:
+    #     my_list_str += f"<li>number is {x}</li>"
 
 
     context = {
-        'my_list': my_list,
+        'object_list': article_queryset,
         'title':article_obj.title,
         'id':article_obj.id,
         'content':article_obj.content
