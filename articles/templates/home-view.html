@@ -3,5 +3,10 @@
 
 <h1>{{ title }} (id: {{id}})</h1>
 <p>{{ content }}</p>
+<ul>
+    {% for x in my_list %}
+        <li>{{ x }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock content %}

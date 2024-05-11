@@ -18,8 +18,16 @@ def home_view(request):
     random_id = random.randint(1, 3)
 
     article_obj = Article.objects.get(id=random_id)
+    
+    my_list = [102, 334, 13, 92, 47]
+    my_list_str = ""
+
+    for x in my_list:
+        my_list_str += f"<li>number is {x}</li>"
+
 
     context = {
+        'my_list': my_list,
         'title':article_obj.title,
         'id':article_obj.id,
         'content':article_obj.content
