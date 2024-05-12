@@ -1,8 +1,6 @@
 {% extends "base.html" %} 
 {% block content %}
-
-<h1>{{ title }} (id: {{id}})</h1>
-<p>{{ content }}</p>
+<h1>Articles:</h1>
 <ul>
     {% for x in object_list %}
     {% if x.title %}
