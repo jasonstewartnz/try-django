@@ -6,6 +6,11 @@
     <body>
         <h1>My Blog</h1>
 
+        <form action="/articles/" method="GET">
+            <input type='text' name="q"/>
+            <input type='submit' />
+        </form>
+
         {% block content %}
         <h3>This will be replaced</h3>
         {% endblock %}
