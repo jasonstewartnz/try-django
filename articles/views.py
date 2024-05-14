@@ -3,6 +3,23 @@ from django.http import HttpResponse
 from .models import Article
 from django.shortcuts import render
 
+# @csrf_exempt - allows you to circumvent security (may be useful for REST API)
+def article_create_view(request, id=None):
+    context = {
+    }
+
+    if request.method=='POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        print(f'Title is: {title}\n Content is: {content}')
+
+        article_object = Article.objects.create(title=title,content=content)
+
+        context['object'] = article_object
+        context['created'] = True
+        
+    return render(request,'articles/create.html',context=context)
 
 def article_detail_view(request, id=None):
     article_obj = None
